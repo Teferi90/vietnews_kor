@@ -106,6 +106,7 @@ def request_podcast(notebook_id: str, logger=None) -> str:
         [
             "audio", "create", notebook_id,
             "--language", "ko",
+            "--length", "short",
             "--focus", "베트남 거주 한국인을 위한 핵심 뉴스 요약. 반드시 한국어로만 진행하시오.",
             "--confirm",
         ],
