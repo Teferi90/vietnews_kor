@@ -142,7 +142,7 @@ def wait_for_podcast(notebook_id: str, logger=None) -> str:
             artifact_id = artifact.get("id", "")
             if logger:
                 logger.info(f"폴링 {poll_count}회: artifact={artifact_id} status={status}")
-            if status == "complete" and artifact_id:
+            if status in ("complete", "completed") and artifact_id:
                 if logger:
                     logger.info(f"팟캐스트 생성 완료: artifact_id={artifact_id}")
                 return artifact_id
