@@ -103,7 +103,12 @@ def request_podcast(notebook_id: str, logger=None) -> str:
         Artifact ID: 24e3385d-e30d-4856-8a8e-7d2ea394f69b
     """
     output = _run_nlm(
-        ["audio", "create", notebook_id, "--confirm"],
+        [
+            "audio", "create", notebook_id,
+            "--language", "ko",
+            "--focus", "베트남 거주 한국인을 위한 핵심 뉴스 요약. 반드시 한국어로만 진행하시오.",
+            "--confirm",
+        ],
         timeout=120,
         logger=logger,
     )
